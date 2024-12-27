@@ -10,9 +10,17 @@ const userSchema = new mongoose.Schema(
         },
         mobileNumber: {
             type: String,
+            default: "00",
         },
         email: {
             type: String,
+        },
+        password: {
+            type: String,
+        },
+        isEmailVerified: {
+            type: Number,
+            default: 0
         },
         profileImage: {
             type: String,
@@ -22,6 +30,8 @@ const userSchema = new mongoose.Schema(
             type: String,
             default: "User",
         },
+
+
     },
     { timestamps: true }
 );

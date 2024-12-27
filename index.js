@@ -12,6 +12,7 @@ const Admin = require("./model/AdminModel");
 // -------------------------------------------------------------------------------
 
 const adminRoute = require('./routes/adminRoute');
+const userRoute = require('./routes/userRoute');
 
 // -------------------------------------------------------------------------------
 
@@ -98,7 +99,7 @@ app.use((error, req, res, next) => {
 // Mount routes
 
 app.use('/', adminRoute);
-
+app.use('/', userRoute);
 
 
 
