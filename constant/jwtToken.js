@@ -11,12 +11,14 @@ function createToken(user) {
   return token
 }
 
+// --------------------------------------------------------------
+
 const generateAuthToken = (userId, email, adminType) => {
   try {
     const token = jwt.sign(
       { userId, email, adminType },
       process.env.JWT_SECRET,
-      { expiresIn: '8d' },
+      { expiresIn: '30d' },
     );
     return token;
   } catch (error) {
@@ -24,12 +26,14 @@ const generateAuthToken = (userId, email, adminType) => {
   }
 };
 
+// --------------------------------------------------------------
+
 const UserForgenerateAuthToken = (userId, email) => {
   try {
     const token = jwt.sign(
       { userId, email },
       process.env.JWT_SECRET,
-      { expiresIn: '8d' },
+      { expiresIn: '30d' },
     );
     return token;
   } catch (error) {

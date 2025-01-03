@@ -1,5 +1,3 @@
-
-
 module.exports = {
-    secretKey: process.env.secretKey
-}
+    secretKey: process.env.SECRET_KEY || "your-default-secret-key"
+};

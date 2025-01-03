@@ -27,6 +27,12 @@ const adminSchema = new mongoose.Schema({
   adminType: {
     type: String,
   },
+  ContactUs_Id: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'ContactUs_Model'
+  },]
+
+
 
 }, { timestamps: true });
 

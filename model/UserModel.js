@@ -30,8 +30,9 @@ const userSchema = new mongoose.Schema(
             type: String,
             default: "User",
         },
-
-
+        emailOTP: {
+            type: String,
+        },
     },
     { timestamps: true }
 );

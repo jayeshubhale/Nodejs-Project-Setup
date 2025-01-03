@@ -13,9 +13,11 @@ const Admin = require("./model/AdminModel");
 
 const adminRoute = require('./routes/adminRoute');
 const userRoute = require('./routes/userRoute');
+const privacyPolicy = require('./routes/privecyPolicyRoute');
+const termsAndConditions = require('./routes/termsConditionRoute');
+
 
 // -------------------------------------------------------------------------------
-
 
 const bcrypt = require("bcryptjs");
 
@@ -52,7 +54,7 @@ const connectDb = async () => {
 
     const port = process.env.PORT || 4500;
 
-    app.listen(port, "192.168.0.176", () => {
+    app.listen(port, "192.168.8.90", () => {
       console.log(`Your Express app is running on PORT : ${port}`.bgCyan.bold);
     });
 
@@ -96,10 +98,15 @@ app.use((error, req, res, next) => {
   return res.status(500).send(message);
 });
 
+
 // Mount routes
+
 
 app.use('/', adminRoute);
 app.use('/', userRoute);
+app.use('/', privacyPolicy);
+app.use('/', termsAndConditions);
+
 
 
 
